@@ -61,12 +61,11 @@ with st.spinner("Setting up agent...please wait"):
 
     agent_executor = create_sql_agent(
         llm=llm,
-
         toolkit=toolkit,
         verbose=True,
         agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
-        agent_executor_kwargs={"return_intermediate_steps":True, 
-        "max_iterations":10}
+        max_iterations=10,
+        agent_executor_kwargs={"return_intermediate_steps":True}
     )
     st.success("Agent setup done!")
 
